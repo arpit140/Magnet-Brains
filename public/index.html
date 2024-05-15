@@ -1,0 +1,65 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #auth, #task-manager {
+            margin: 20px;
+        }
+
+        input, textarea {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        #task-list {
+            margin-top: 20px;
+        }
+
+        .high { background-color: #ffcccc; }
+        .medium { background-color: #ffffcc; }
+        .low { background-color: #ccffcc; }
+    </style>
+</head>
+<body>
+    <div id="auth">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+    </div>
+
+    <div id="task-manager" style="display: none;">
+        <h2>Create Task</h2>
+        <input type="text" id="task-title" placeholder="Title">
+        <input type="text" id="task-description" placeholder="Description">
+        <input type="date" id="task-due-date">
+        <select id="task-priority">
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+        </select>
+        <button onclick="createTask()">Create Task</button>
+
+        <h2>Tasks</h2>
+        <div id="task-list"></div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
